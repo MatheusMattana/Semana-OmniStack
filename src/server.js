@@ -1,7 +1,15 @@
 const express = require('express');
+const mongoose = require('mongoose');
+
 const routes = require('./routes');
 
+
 const app = express();
+
+mongoose.connect('mongodb+srv://mattana:mattana@cluster0-wobw8.mongodb.net/test?retryWrites=true&w=majority',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
 // req.query = Acessar query params (para filtros)
 // req.params = Acessar route params (para edição, delete)
